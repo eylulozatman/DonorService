@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='createdonor.js') }}"></script>
+    <title>Document</title>
+</head>
+<body class="hpbody">
+    <p>Welcome! Just 1 donation can save up to 3 lives</p>
+    <div class="hpcontainer">
+        <div class="c1">
+            <button onclick="goToCreateDonor()">Create Donor</button>
+        </div>
+        <div class="c2">
+            <button onclick="goToAddBlood()">Add Blood Donation</button>
+        </div>
+    </div>
+
+    <script>
+        function goToCreateDonor() {
+            window.location.href = "/createDonor"; 
+        }
+
+        function goToAddBlood() {
+            window.location.href = "/addbloodpage";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #35495e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.container {
+    width: 30%; /* Formun genişliği */
+    margin: 0 auto; /* Ortala */
+    background-color: #fff; /* Arka plan rengi */
+    padding: 20px; /* Kenar boşlukları */
+    box-sizing: border-box; /* Kenar boşlukları dahil olacak şekilde boyutlandırma */
+    color: #35495e; /* Metin rengi */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+}
+
+.formaddblood div {
+    margin-bottom: 15px; /* Her input alanı arasına boşluk bırak */
+}
+
+.formaddblood label {
+    display: block; /* Label'ları blok olarak göster, alt alta gelmesini sağla */
+    margin-bottom: 5px; /* Label ile input arasına boşluk bırak */
+}
+
+.formaddblood input[type="text"],
+.formaddblood input[type="date"],
+.formaddblood select
+ {
+    width: calc(100% - 12px); 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    color: #35495e;
+    background-color: #fff;
+    margin-top: 5px; 
+}
+
+.formaddblood input[type="text"]:read-only  {
+    background-color: #ccc; 
+    width: max-content;
+}
+
+.formaddblood input[type="submit"] {
+    padding: 10px 20px; /* Buton boyutlandırması */
+    font-size: 16px; /* Yazı boyutu */
+    cursor: pointer; /* İmleç tipi */
+    background-color: #ff7e67; /* Buton arka plan rengi */
+    color: #fff; /* Buton metin rengi */
+    border: none; /* Kenar çizgisi yok */
+    border-radius: 4px; /* Kenar yumuşatma */
+}
+
+.formaddblood input[type="submit"]:hover {
+    background-color: #42b883; /* Butona hover olduğunda arka plan rengi */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <script src="{{ url_for('static', filename='addblood.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form  class="formaddblood">
+            <div>
+                <label for="donorName">Donor Name:</label>
+                <input type="text" id="donorName" name="donorName" list="donorList" required>
+                <datalist id="donorList"></datalist>
+            </div>
+            <div>
+                <label for="bloodType">Blood Type:</label>
+                <input type="text" id="bloodType" name="bloodType" readonly>
+            </div>
+            <div>
+                <label for="currentDate">Date:</label>
+                <input type="date" id="currentDate" name="currentDate" required>
+            </div>
+            <div class="info">
+            </div>
+            <input type="submit" value="Submit" id="submitButton">
+        </form>
+    </div>
+
+</body>
+</html>
