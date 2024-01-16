@@ -7,6 +7,14 @@ import time
 import requests
 from flasgger import Swagger
 
+try:
+    from mail import send_gmail_api_email
+    
+except KeyboardInterrupt:
+    print("\nProgram kapatıldı.")
+    
+    exit()
+
 app = Flask(__name__)
 Swagger(app)
 
@@ -184,11 +192,12 @@ def send_email(donor_id):
     donor = Donor.query.get(donor_id)
     if donor:
         email_address = donor.email
-        # Burada gerçek e-posta gönderme işlemi yapılabilir
+        send_gmail_api_email(email_address)
         print(f"E-posta gönderildi: {email_address}")
     else:
         print("Donor not found.")
 
+    
 def postMessage(request_id, blood_type, num_of_units, available_units):
     url = 'https://bloodrequestservice.azurewebsites.net/bloodfound'
     
@@ -245,14 +254,16 @@ def get_requests():
 
             if available_units <= num_of_units:
                 status_code = postMessage(request_data['id'], request_data['blood_type'], request_data['num_of_units'], available_units)
+                
                 if status_code == 200:
                     for row in rows:
                         donor_id = row.donor_id
-                        send_email(donor_id)  
-                     return 'Requests processed'
+                        send_email(donor_id)
+                        
+                    return 'Requests processed'
                 else:
-                return 'Error fetching data from API'
-   
+                    return 'Error fetching data from API'
+
 
 # Zamanlanmış görevi 3 dakikada bir çalışacak şekilde planlama
 schedule.every(3).minutes.do(get_requests)
