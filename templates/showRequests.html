@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Requests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="page-title">Blood Requests</h1>
+    <ul class="requests-list">
+        {% for request in Bloodrequests %}
+            <li class="request-item">
+                <strong class="request-id">ID:</strong> {{ request['id'] }}<br>
+                <strong class="blood-type">Blood Type:</strong> {{ request['blood_type'] }}<br>
+                <strong class="town">Town:</strong> {{ request['town'] }}<br>
+                <strong class="city">City:</strong> {{ request['city'] }}<br>
+                <strong class="num-of-units">Number of Units:</strong> {{ request['num_of_units'] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

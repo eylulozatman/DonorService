@@ -30,6 +30,7 @@ function deleteDonor(fullname) {
     .then(response => {
         if (response.ok) {
             // Başarılı yanıt durumunda yapılacak işlemler
+            location.reload();
             console.log('deleted');
             // Gerekirse sayfayı yenileyebilir ya da listeden bağışçıyı kaldırabilirsiniz.
         } else {
@@ -81,6 +82,11 @@ function getTowns() {
             })
             .catch(error => console.error('Error fetching towns:', error));
     }
+}
+
+function homepageback() {
+   
+    window.location.href = '/';
 }
 
 

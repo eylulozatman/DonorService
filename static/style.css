@@ -135,3 +135,54 @@ form input[type="submit"] {
     margin-left: 8px; /* Sol kenardan biraz uzaklık */
 }
 
+#backbtn{
+    
+    background-color: #42b883; /* Kırmızı arka plan */
+    color: #ffffff; /* Beyaz yazı rengi */
+    border: none; /* Kenarlık olmadan */
+    padding: 8px 16px; /* İç boşluk */
+    border-radius: 4px; /* Köşeleri yuvarlat */
+    cursor: pointer; /* İmleci bir el işareti yap */
+    margin-left: 8px; /* Sol kenardan biraz uzaklık */
+}
+
+@media screen and (max-width: 768px) {
+    .hpcontainer {
+        width: 90%; /* Küçük ekranlarda daha fazla genişlik */
+    }
+}
+
+/*show requests*/
+
+
+.page-title {
+    text-align: center;
+}
+
+.requests-list {
+
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.request-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ea593f;
+}
+
+.request-item strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.request-item strong + strong {
+    margin-left: 15px;
+}
+
+.num-of-units {
+    color: #35495e;
+}

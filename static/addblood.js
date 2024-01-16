@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentDate = `${year}-${month}-${day}`;
     currentDateInput.value = currentDate;
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('submitButton').addEventListener('click', function(event) {
         var donorName = document.getElementById('donorName').value;
@@ -108,20 +107,34 @@ document.addEventListener('DOMContentLoaded', function() {
             var infoDiv = document.querySelector('.info');
             var para = document.createElement("p");
 
-            if ('error' in data) {
+            if ('error' in data && data.error === 'Donor not found') {
                 var errorPara = document.createElement("p");
                 var errorTextNode = document.createTextNode(data.error);
                 errorPara.appendChild(errorTextNode);
                 infoDiv.appendChild(errorPara);
-            } else {
-                var textNode = document.createTextNode("1 donation added to blood bank");
+
+                setTimeout(function() {
+                    infoDiv.removeChild(errorPara);
+                    document.getElementById('myForm').reset();
+                }, 2000); // 2 seconds delay
+            } else if ('message' in data) {
+                var textNode = document.createTextNode(data.message);
                 para.appendChild(textNode);
                 infoDiv.appendChild(para);
-                document.getElementById('myForm').reset(); // Formun sıfırlanması
+
+                setTimeout(function() {
+                    infoDiv.removeChild(para);
+                    document.getElementById('myForm').reset();
+                }, 2000); // 2 seconds delay
             }
         })
         .catch(error => console.error('Error:', error));
-        
-        event.preventDefault();
     });
 });
+
+
+function homepageback() {
+   
+    window.location.href = '/';
+}
+

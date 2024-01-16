@@ -63,3 +63,14 @@ body {
 .formaddblood input[type="submit"]:hover {
     background-color: #42b883; /* Butona hover olduğunda arka plan rengi */
 }
+
+#backbtn{
+    
+    background-color: #42b883; /* Kırmızı arka plan */
+    color: #ffffff; /* Beyaz yazı rengi */
+    border: none; /* Kenarlık olmadan */
+    padding: 8px 16px; /* İç boşluk */
+    border-radius: 4px; /* Köşeleri yuvarlat */
+    cursor: pointer; /* İmleci bir el işareti yap */
+    margin-left: 8px; /* Sol kenardan biraz uzaklık */
+}
